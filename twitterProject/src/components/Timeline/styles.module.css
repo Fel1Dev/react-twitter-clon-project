@@ -1,0 +1,6 @@
+.timeline {
+    border: 1px solid var(--border-color);
+    width: 100%;
+    max-width: 600px; /*This value must be calculate to buld a mobile-fist app */ 
+    margin: 0 auto;
+}

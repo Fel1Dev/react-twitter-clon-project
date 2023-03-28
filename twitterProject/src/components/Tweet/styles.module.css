@@ -1,24 +1,26 @@
 .tweet {
-    margin: 20px 0;
-    width: 400px;
+    margin: 1px 0;
+    padding: 20px 0;
+    width: 100%;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .header {
     display: flex;
+    width: 100%;
 }
 
 .header img {
     border-radius: 50%;
     margin: 0 20px;
-    height: 45px;
-    width: 45px;
 }
 
 .header span {
     margin: 0 10px;
 }
 
-.name {
+.username {
     font-weight: 800;
     font-size: 20px;
 }
@@ -31,6 +33,7 @@
 .children {
     padding: 10px 20px;
 }
+
 .children p {
     font-size: 18px;
     margin: 10px 0;
@@ -38,23 +41,18 @@
 
 .children img {
     border-radius: 20px;
-    height: 300px;
-    width: 300px;
+    max-height: 400px;
+    height: auto;
+    width: 100%;
     object-fit: cover;
 }
 
 .list {
     display: flex;
     justify-content: space-around;
-    list-style: none;
+    height: 25px;
 }
 
-.list button {
-    background: transparent;
-    border: 0;
-    font-size: 16px;
-}
-
-.list button:hover {
-    cursor: pointer;
+.list span { 
+    margin: 0 10px;
 }
