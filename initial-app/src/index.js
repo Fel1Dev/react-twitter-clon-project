@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Counter from './componentes/useState/Counter';
+import ComplexCounter from './componentes/complexState/ComplexCounter';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <Counter />
+    <ComplexCounter />
 );
 
 // If you want to start measuring performance in your app, pass a function
