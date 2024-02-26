@@ -7,12 +7,14 @@ import ComplexCounter from './componentes/complexState/ComplexCounter';
 import SimplerCounter from './componentes/arrayStates/SimplerCounter';
 import RenderCollection from './componentes/renderCollections/RenderCollection';
 import Wrapper from './componentes/renderCollections/Wrapper';
+import { UserList } from './componentes/fetch&Filter/UserList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
     <SimplerCounter />
     <Wrapper />
+    <UserList />
   </>
 );
 
