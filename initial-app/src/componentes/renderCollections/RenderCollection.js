@@ -1,3 +1,5 @@
+import { Li } from "./Li";
+
 const RenderCollection = (props) => {
   const { notes } = props;
 
@@ -6,9 +8,9 @@ const RenderCollection = (props) => {
       <h1>Notes</h1>
       <ul>
         {notes.map((note) => (
-          <li key={note.id}>
+          <Li key={note.id}>
             {note.content}
-          </li>
+          </Li>
         ))}
       </ul>
     </div>

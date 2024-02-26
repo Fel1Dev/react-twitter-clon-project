@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import Button from '../parentChildComponents/Button'
 import History from './History';
+import { StyledButton } from '../parentChildComponents/StyledButton';
 
 const SimplerCounter = () => {
   const [left, setLeft] = useState(0);
@@ -24,8 +26,8 @@ const SimplerCounter = () => {
   return (
     <div>
       {left}
-      <button onClick={handleLeftClick}>left</button>
-      <button onClick={handleRightClick}>right</button>
+      <StyledButton onClick={handleLeftClick} text="Left"></StyledButton>
+      <StyledButton onClick={handleRightClick} text="Right"></StyledButton>
       {right}
       <br></br>
       {"Prueba texto"}

@@ -10,7 +10,10 @@ import Wrapper from './componentes/renderCollections/Wrapper';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <>
+    <SimplerCounter />
     <Wrapper />
+  </>
 );
 
 // If you want to start measuring performance in your app, pass a function
