@@ -5,10 +5,12 @@ import reportWebVitals from './reportWebVitals';
 import Counter from './componentes/useState/Counter';
 import ComplexCounter from './componentes/complexState/ComplexCounter';
 import SimplerCounter from './componentes/arrayStates/SimplerCounter';
+import RenderCollection from './componentes/renderCollections/RenderCollection';
+import Wrapper from './componentes/renderCollections/Wrapper';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <SimplerCounter />
+    <Wrapper />
 );
 
 // If you want to start measuring performance in your app, pass a function
