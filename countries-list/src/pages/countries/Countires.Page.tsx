@@ -2,6 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import CountryCard from '../../components/CountryCard';
+
+//import { ListElement } from '../../components/ElemetList.tsx'
 
 // The application should have the following features:
 
@@ -21,7 +24,7 @@ const BASE_URL: String = 'https://restcountries.com/v3.1';
  * To filter by capital city, use the `/capital/{capital}` endpint.
  */
 
-const FILTERABLE_CAPITALS: String[] = [
+const FILTERABLE_CAPITALS: string[] = [
   'Tallinn',
   'Helsinki',
   'Stockholm',
@@ -30,9 +33,9 @@ const FILTERABLE_CAPITALS: String[] = [
   'Reykjavik',
 ] as const;
 
-type Capital = (typeof FILTERABLE_CAPITALS)[number];
+export type Capital = (typeof FILTERABLE_CAPITALS)[number];
 
-interface Country {
+export interface Country {
   name: {
     common: string;
   };
@@ -40,21 +43,45 @@ interface Country {
 }
 
 const CountriesPage = () => {
-  const [countries, setCountries] = useState(String);
+  const [countries, setCountries] = useState<Country[]>();
+  const [capital, setCapital] = useState<Capital>();
 
   useEffect(() => {
     console.log('effect');
-    axios.get(`{BASE_URL}/all`).then((response) => {
-      console.log(response);
-      setCountries(response.data);
+    const url = `${BASE_URL}/all`;
+
+    axios.get<Country[]>(url).then((response: any) => {
+      setCountries(response.data as Country[]);
     });
   }, []);
-  console.log('render', countries.length, 'countries');
+
+  console.log('render', countries ? countries.length : 0, 'countries');
 
   return (
     <>
-      <div className="p-4">React Interview</div>
-      <countries list={countries} />
+      <h1>React Countries Interview</h1>
+
+      <div>
+        <label>
+          Select a Capital
+          <select name="selectCapital">
+            {FILTERABLE_CAPITALS.map((capital) => {
+              return <option value={capital}>{capital}</option>;
+            })}
+          </select>
+        </label>
+      </div>
+
+      {countries && (
+        <div>
+          <br />
+          <div>
+            {countries.map((country: Country) => (
+              <CountryCard key={country.name.common} country={country} />
+            ))}
+          </div>
+        </div>
+      )}
     </>
   );
 };
